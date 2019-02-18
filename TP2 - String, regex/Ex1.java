@@ -1,4 +1,7 @@
 
+
+// javac Ex1.java && java Ex1
+
 public class Ex1 {
 	public static void main(String[] args) {
 		// 1 
@@ -20,7 +23,7 @@ public class Ex1 {
 		// true
 		// false
 
-		// s2 est une référence vers 
+		// s2 est une référence vers s1
 		// s3 est une copie du contenu de s1 
 
 		// 3
@@ -43,9 +46,10 @@ public class Ex1 {
 		// true
 		// les s6 et s7 sont des références. 
 		// "toto" est l'objet sur lequel elles pointent
-		// note : quand on fait des concatémations et des "modifications" de variables string
+		// note : quand on fait des concaténations et des "modifications" de variables string
 		// 		  on ne modifie pas directement les objets
 		// 		  java bricole avec les références mais les objets ne sont jamais directement modifiés 
+		// 		  -> une variable peut ^etre une sorte de liste de référence vers des "vrais" objets string 
 
 		// 5
 		// If strings were mutable, we could do something like this:
@@ -60,7 +64,7 @@ public class Ex1 {
 		var s8 = "hello";
 		s8.toUpperCase();
 		System.out.println(s8);
-		// s8.toUpperCase() retourne s8 en upperCase
+		// s8.toUpperCase() retourne s8 en upperCase (var a = s8.upperCase(); --> a == "HELLO")
 		// mais ne modifie pas l'objet pointé vers s8.
 		// pour le faire, on peut faire comme ça :
 
