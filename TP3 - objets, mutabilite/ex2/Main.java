@@ -82,7 +82,11 @@ public class Main {
 	// il faut modifier les setters de book pour prendre en compte le cas null, ie lancer une erreur
 
 	//10
-	// quand on a des nulls là ou on veut pas, on lance des erreurs
+	// quand on a des nulls là ou on veut pas, on lance des erreurs. règle générale : 
+	// - on initialise toujours les variables locales
+	// - pas de null dans les membres
+	// - pas de null renvoyé par des méthodes
+	// si on n'a pas le choix de faire autrement : le préciser dans la doc et en commentaire dans le code
 
 	//11
 	// Objects.requireNonNull renvoie l'objet si il n'st pas null et lance une erreur si il l'est.
