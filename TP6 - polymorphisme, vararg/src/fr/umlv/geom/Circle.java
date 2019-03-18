@@ -29,8 +29,8 @@ public class Circle {
 	//METHODS
 	@Override
 	public String toString() {
-		return "cercle (" + center + ',' + radius + ')'
-				+ " surface : " + surface();
+		return "circle: {(" + center + ',' + radius + ')'
+				+ " surface: " + surface() + "}";
 	}	
 	
 	public void translate(int dx, int dy) {
@@ -38,10 +38,19 @@ public class Circle {
 	}
 	
 	public float surface() {
-		return (float)Math.PI * (float)radius*(float)radius;
+		return (float)Math.PI * (float)radius * (float)radius;
 	}
 	
+	// renvoie vrai si un point est contenu dans un disque
 	public boolean contains(Point p) {
+		return center.sqDistTo(p) < radius*radius;
+	}
+	
+	// renvoie vrai si un point est contenu dans un des disques
+	public static boolean contains(Point p, Circle... circles) {
+		for (int i=0; i<circles.length; i++) {
+			if (circles[i].contains(p)) return true;
+		}
 		return false;
 	}
 	
@@ -65,4 +74,10 @@ public class Circle {
 	*/
 	// translate le point p. 
 	//solution : renvoyer une copie du point par la méthode get
+	
+	
+	//1.10
+	// ... indique que l'on peut donner plusieurs disques comme 
+	// arguments et qu'ils seront stockés dans un tableau "circles"
+
 }
